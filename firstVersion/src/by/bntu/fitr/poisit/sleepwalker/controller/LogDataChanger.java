@@ -5,17 +5,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
-import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 import static by.bntu.fitr.poisit.sleepwalker.util.FormHelper.showMessage;
 
-public class LogChanger {
-
+public class LogDataChanger {
     static final String EMPTY_LOGIN_MSG = "Empty login. Check, please";
     static final String EMPTY_PASSWORD_MSG = "Empty password. Check, please";
     static final String WRONG_PREVIOUS_MSG = "Wrong previous password. Check, please";
@@ -23,23 +20,17 @@ public class LogChanger {
     static final String SUCCESS_PASSWORD_MSG = "Password changed successful";
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
-    private TextField loginField, passwordField;
-
-    @FXML
     private PasswordField previousPasswordField;
 
+    @FXML
+    private TextField newLoginField, newPasswordField;
 
-    public void clickOnChangeLogin(ActionEvent actionEvent) {
+    @FXML
+    void clickOnChangeLogin(ActionEvent event) {
         if (checkPreviousPassword()) {
-            if (!loginField.getText().isEmpty()) {
+            if (!newLoginField.getText().isEmpty()) {
                 try {
-                    LoginData.getInstance().setLogin(loginField.getText());
+                    LoginData.getInstance().setLogin(newLoginField.getText());
                     showMessage(SUCCESS_LOG_MSG, Alert.AlertType.INFORMATION);
                 } catch (IOException e) {
                     showMessage(Catalog.FILE_NOT_FOUND_MESSAGE, Alert.AlertType.ERROR);
@@ -52,11 +43,12 @@ public class LogChanger {
         }
     }
 
-    public void clickOnChangePassword(ActionEvent actionEvent) {
+    @FXML
+    void clickOnChangePassword(ActionEvent event) {
         if (checkPreviousPassword()) {
-            if (!passwordField.getText().isEmpty()) {
+            if (!newPasswordField.getText().isEmpty()) {
                 try {
-                    LoginData.getInstance().setPassword(passwordField.getText());
+                    LoginData.getInstance().setPassword(newPasswordField.getText());
                     showMessage(SUCCESS_PASSWORD_MSG, Alert.AlertType.INFORMATION);
                 } catch (IOException e) {
                     showMessage(Catalog.FILE_NOT_FOUND_MESSAGE, Alert.AlertType.ERROR);

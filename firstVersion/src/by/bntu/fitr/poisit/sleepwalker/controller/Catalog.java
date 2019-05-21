@@ -32,7 +32,7 @@ public class Catalog {
             = "/by/bntu/fitr/poisit/sleepwalker/view/fxml/loginWindow.fxml";
 
     static final String PATH_TO_LOG_CHANGER_WINDOW
-            = "/by/bntu/fitr/poisit/sleepwalker/view/fxml/logChangerWindow.fxml";
+            = "/by/bntu/fitr/poisit/sleepwalker/view/fxml/logDataChangerWindow.fxml";
 
     static final String PATH_TO_GOOD_CREATOR_WINDOW
             = "/by/bntu/fitr/poisit/sleepwalker/view/fxml/goodCreatorWindow.fxml";

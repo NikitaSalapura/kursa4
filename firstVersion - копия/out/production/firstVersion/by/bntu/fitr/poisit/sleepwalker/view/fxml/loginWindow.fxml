@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="618.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.bntu.fitr.poisit.sleepwalker.controller.Login">
+   <children>
+      <AnchorPane layoutX="1.0" layoutY="124.0" prefHeight="223.0" prefWidth="666.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="124.0">  
+         <children>
+            <TextField fx:id="loginField" layoutX="50.0" layoutY="52.0" prefHeight="36.0" prefWidth="284.0" promptText="Логин" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="284.0" AnchorPane.topAnchor="52.0" />
+            <PasswordField fx:id="passwordField" layoutX="50.0" layoutY="112.0" prefHeight="36.0" prefWidth="284.0" promptText="Пароль" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="284.0" AnchorPane.topAnchor="112.0" />
+            <Button fx:id="signInButton" layoutX="362.0" layoutY="52.0" mnemonicParsing="false" prefHeight="96.0" prefWidth="202.0" style="-fx-background-color: #2E3348;" text="Войти" textFill="WHITE" AnchorPane.rightAnchor="54.0" AnchorPane.topAnchor="52.0">
+               <font>
+                  <Font size="22.0" />
+               </font></Button>
+            <Label fx:id="wrongInputLabel" layoutX="163.0" layoutY="14.0" prefHeight="27.0" prefWidth="292.0" textAlignment="CENTER" textFill="RED" AnchorPane.leftAnchor="163.0" AnchorPane.rightAnchor="163.0" AnchorPane.topAnchor="14.0">
+               <effect>
+                  <Lighting diffuseConstant="1.1" specularConstant="0.53" specularExponent="24.05" surfaceScale="6.84">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="261.0" layoutY="35.0" text="Вход" textFill="WHITE" AnchorPane.rightAnchor="276.0" AnchorPane.topAnchor="35.0">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>

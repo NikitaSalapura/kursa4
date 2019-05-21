@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="582.0" prefWidth="928.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.bntu.fitr.poisit.sleepwalker.controller.Catalog">
+   <children>
+      <SplitPane dividerPositions="0.4222462203023758" prefHeight="664.0" prefWidth="805.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="580.0" prefWidth="395.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="71.0" prefHeight="43.0" prefWidth="108.0" text="Раздел" />
+                  <ComboBox fx:id="comboType" layoutX="151.0" layoutY="78.0" onAction="#clickOnComboType" prefWidth="150.0" promptText="Все" />
+                  <ImageView fx:id="signInImage" fitHeight="79.0" fitWidth="46.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/login.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="68.0" layoutY="24.0" text="Войти как администратор" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="494.0" prefWidth="459.0">
+               <children>
+                  <TableView fx:id="goodTable" layoutX="69.0" layoutY="25.0" prefHeight="494.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</VBox>

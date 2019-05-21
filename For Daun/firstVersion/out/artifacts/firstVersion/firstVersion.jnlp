@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="firstVersion.jnlp">
+  <information>
+    <title>Lox</title>
+    <vendor>Unknown</vendor>
+    <description>firstVersion</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="firstVersion.jar" size="99855" download="eager" />
+    <jar href="gson-2.8.5.jar" size="241622" download="eager" />
+    <jar href="log4j-1.2.17.jar" size="489884" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="by.bntu.fitr.poisit.sleepwalker.controller.Main"  name="firstVersion" />
+  <update check="background"/>
+</jnlp>

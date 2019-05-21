@@ -26,7 +26,7 @@ public class FormHelper {
         stage.showAndWait();
     }
 
-    public static void showError(String msg, Alert.AlertType alertType) {
+    public static void showMessage(String msg, Alert.AlertType alertType) {
         Alert alert = new Alert(alertType, msg);
         alert.showAndWait();
     }

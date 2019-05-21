@@ -15,38 +15,18 @@ import java.util.Arrays;
 
 public class Main extends Application {
 
+    private final static String PATH_TO_MAIN_WINDOW
+            = "/by/bntu/fitr/poisit/sleepwalker/view/fxml/mainWindow.fxml";
+
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("../view/fxml/mainWindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource(PATH_TO_MAIN_WINDOW));
         primaryStage.setTitle("Catalog");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 
     public static void main(String[] args) {
-
-        try {
-            JsonWorker.write(LoginData.getInstance());
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        GoodContainer goodContainer = new GoodContainer();
-        goodContainer.setFootwearList(Arrays.asList(
-                new Footwear
-                        (10, "white", "BASK", "medical", "HDPE", "soft"),
-                new Footwear(22)));
-        goodContainer.setSuitList(Arrays.asList(new Suit(11)));
-        goodContainer.setProtectionMeanList(Arrays.asList(
-                new ProtectionMean(5, "red", "CERVA", "for loggers", "plastic", "helmet")));
-        try {
-            JsonWorker.write(goodContainer);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
         launch(args);
     }
 }

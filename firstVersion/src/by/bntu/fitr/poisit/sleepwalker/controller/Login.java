@@ -1,24 +1,19 @@
 package by.bntu.fitr.poisit.sleepwalker.controller;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static by.bntu.fitr.poisit.sleepwalker.util.FormHelper.*;
 
 import by.bntu.fitr.poisit.sleepwalker.model.entity.LoginData;
 import by.bntu.fitr.poisit.sleepwalker.util.Animation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+import javafx.scene.control.*;
 
 public class Login {
+    public static final String WRONG_LOGIN_MSG = "Wrong login or password";
 
     public static boolean isAdmin;
 
@@ -49,25 +44,13 @@ public class Login {
                 Catalog.isAdmin = true;
                 isAdmin = true;
                 signInButton.getScene().getWindow().hide();
-
-//                    FXMLLoader loader = new FXMLLoader();
-//                    loader.setLocation(getClass().getResource("../view/fxml/catalogEditor.fxml"));
-//                    try {
-//                        loader.load();
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                    Parent root = loader.getRoot();
-//                    Stage stage = new Stage();
-//                    stage.setScene(new Scene(root));
-//                    stage.showAndWait();
             } else {
-                wrongInputLabel.setText("Wrong login or password");
+                wrongInputLabel.setText(WRONG_LOGIN_MSG);
                 Animation.shake(loginField);
                 Animation.shake(passwordField);
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            showMessage(Catalog.FILE_NOT_FOUND_MESSAGE, Alert.AlertType.ERROR);
         }
     }
 

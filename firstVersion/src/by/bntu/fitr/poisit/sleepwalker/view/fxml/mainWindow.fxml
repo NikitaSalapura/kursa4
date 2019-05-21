@@ -22,7 +22,7 @@
                      <font>
                         <Font name="Andalus" size="18.0" />
                      </font></Label>
-                  <ComboBox fx:id="comboType" layoutX="178.0" layoutY="84.0" onAction="#clickOnComboType" prefWidth="150.0" promptText="Suit" AnchorPane.rightAnchor="14.0" />
+                  <ComboBox fx:id="comboType" layoutX="177.0" layoutY="84.0" onAction="#clickOnComboType" prefWidth="150.0" AnchorPane.rightAnchor="15.0" />
                   <ImageView fx:id="signInImage" fitHeight="79.0" fitWidth="46.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#clickOnSignIn" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/login.png" />
@@ -37,12 +37,12 @@
                         <Image url="@../images/logo.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="removeButton" layoutX="215.0" layoutY="228.0" mnemonicParsing="false" onAction="#clickOnRemoveButton" prefHeight="58.0" prefWidth="103.0" style="-fx-background-color: #e5062b;" text="Remove" textFill="WHITE" visible="false" AnchorPane.rightAnchor="39.0">
+                  <Button fx:id="removeButton" layoutX="215.0" layoutY="228.0" mnemonicParsing="false" onAction="#clickOnRemoveButton" prefHeight="58.0" prefWidth="103.0" style="-fx-background-color: #e5062b;" text="Remove" textFill="WHITE" AnchorPane.rightAnchor="39.0">
                      <font>
                         <Font name="Andalus" size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="addButton" layoutX="39.0" layoutY="228.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="103.0" style="-fx-background-color: #00b50c;" text="Add" textFill="WHITE" visible="false" AnchorPane.leftAnchor="39.0">
+                  <Button fx:id="addButton" layoutX="39.0" layoutY="228.0" mnemonicParsing="false" onAction="#clickOnAdd" prefHeight="58.0" prefWidth="103.0" style="-fx-background-color: #00b50c;" text="Add" textFill="WHITE" AnchorPane.leftAnchor="39.0">
                      <font>
                         <Font name="Andalus" size="22.0" />
                      </font>
@@ -57,6 +57,11 @@
                         <Font name="Andalus" size="23.0" />
                      </font>
                   </Label>
+                  <Button fx:id="changeLogButton" layoutX="167.0" layoutY="22.0" mnemonicParsing="false" onAction="#clickOnChangeLog" prefHeight="39.0" prefWidth="170.0" style="-fx-background-color: #cecb21;" text="Change login or password" textFill="WHITE" visible="false">
+                     <font>
+                        <Font name="Andalus" size="14.0" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="494.0" prefWidth="459.0">

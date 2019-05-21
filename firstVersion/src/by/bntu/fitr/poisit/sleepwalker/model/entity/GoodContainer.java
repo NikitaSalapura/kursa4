@@ -2,6 +2,7 @@ package by.bntu.fitr.poisit.sleepwalker.model.entity;
 
 import by.bntu.fitr.poisit.sleepwalker.util.JsonWorker;
 
+import javax.xml.bind.util.JAXBSource;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +10,8 @@ import java.util.Objects;
 
 public class GoodContainer {
 
+    public final static String PATH_TO_FILE_OF_GOOD_CONTAINER
+            = "d:\\BNTU\\OOP\\kursa4\\firstVersion\\catalogItems.json";
 
     private List<Suit> suitList;
     private List<Footwear> footwearList;
@@ -44,7 +47,19 @@ public class GoodContainer {
         this.footwearList = footwearList;
     }
 
-    public List<Good> getAll(){
+    public void getSuitElement(Suit suit) {
+        suitList.remove(suit);
+    }
+
+    public void getFootwearElement(Footwear footwear) {
+        footwearList.remove(footwear);
+    }
+
+    public void getProtectionMeanElement(ProtectionMean protectionMean) {
+        protectionMeanList.remove(protectionMean);
+    }
+
+    public List<Good> getAll() {
         List<Good> all = new ArrayList<>(suitList);
         all.addAll(footwearList);
         all.addAll(protectionMeanList);
@@ -52,7 +67,7 @@ public class GoodContainer {
     }
 
     public void saveInJson() throws IOException {
-        JsonWorker.write(this);
+        JsonWorker.write(this, PATH_TO_FILE_OF_GOOD_CONTAINER);
     }
 
     @Override

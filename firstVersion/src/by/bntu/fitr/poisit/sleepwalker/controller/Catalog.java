@@ -5,42 +5,52 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
+import static by.bntu.fitr.poisit.sleepwalker.util.FormHelper.*;
+
 import by.bntu.fitr.poisit.sleepwalker.model.entity.*;
-import by.bntu.fitr.poisit.sleepwalker.util.FormHelper;
 import by.bntu.fitr.poisit.sleepwalker.util.JsonWorker;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 public class Catalog {
 
-    public static boolean isAdmin;
+    static final String FILE_NOT_FOUND_MESSAGE
+            = "Fxml file not found";
+
+    static final String NOT_SELECTED_GOOD_MSG
+            = "A good is not selected";
+
+    static final String PATH_TO_LOGIN_WINDOW
+            = "/by/bntu/fitr/poisit/sleepwalker/view/fxml/loginWindow.fxml";
+
+    static final String PATH_TO_LOG_CHANGER_WINDOW
+            = "/by/bntu/fitr/poisit/sleepwalker/view/fxml/logChangerWindow.fxml";
+
+    static final String PATH_TO_GOOD_CREATOR_WINDOW
+            = "/by/bntu/fitr/poisit/sleepwalker/view/fxml/goodCreatorWindow.fxml";
+
+    final static ObservableList<String> typeList = FXCollections
+            .observableArrayList("Suit", "Footwear", "Protection mean");
+
+    final static String[] commonFields = new String[]
+            {"Price", "Color", "Brand", "Category", "Material"};
+
+    public static boolean isAdmin = true;
+
+    static GoodContainer goodContainer;
 
     private ObservableList<Suit> suits;
     private ObservableList<Footwear> footwears;
     private ObservableList<ProtectionMean> protectionMeans;
     private ObservableList<Good> goods;
-
-    private final ObservableList<String> typeList = FXCollections
-            .observableArrayList("Suit", "Footwear", "Protection mean");
-
-    private final String[] commonFields = new String[]
-            {"Price", "Color", "Brand", "Category", "Material"};
-
-    private GoodContainer goodContainer;
-
 
     @FXML
     private ResourceBundle resources;
@@ -49,22 +59,13 @@ public class Catalog {
     private URL location;
 
     @FXML
-    private ImageView signInImage;
+    private ImageView signInImage, signOutImage;
 
     @FXML
-    private ImageView signOutImage;
+    private Label logInLabel, logOutLabel;
 
     @FXML
-    private Label logInLabel;
-
-    @FXML
-    private Label logOutLabel;
-
-    @FXML
-    private Button removeButton;
-
-    @FXML
-    private Button addButton;
+    private Button removeButton, addButton, changeLogButton;
 
     @FXML
     private ComboBox<String> comboType;
@@ -79,13 +80,11 @@ public class Catalog {
 //    private TableColumn<Good, Image> imageColumn;
 
     public void clickOnComboType(ActionEvent actionEvent) {
-        if ("Suit".equals(comboType.getValue())) {
+        if (typeList.get(0).equals(comboType.getValue())) {
             showSuit();
-        } else if ("Footwear".equals(comboType.getValue())) {
-//            addColumns("Sole");
+        } else if (typeList.get(1).equals(comboType.getValue())) {
             showFootwear();
-        } else if ("Protection mean".equals(comboType.getValue())) {
-//            addColumns("Name");
+        } else {
             showProtectionMean();
         }
     }
@@ -97,14 +96,39 @@ public class Catalog {
     }
 
     @FXML
-    void clickOnSignIn(MouseEvent event) {
+    public void clickOnAdd(ActionEvent actionEvent) {
         FXMLLoader loader =
-                new FXMLLoader((getClass().getResource("../view/fxml/loginWindow.fxml")));
+                new FXMLLoader((getClass().getResource(PATH_TO_GOOD_CREATOR_WINDOW)));
         try {
             Parent root = loader.load();
-            FormHelper.openWindow("Authorization", root, event);
+            openWindow("GoodCreator", root, actionEvent);
         } catch (IOException e) {
-            FormHelper.showError("Fxml file not found", Alert.AlertType.ERROR);
+            showMessage(FILE_NOT_FOUND_MESSAGE, Alert.AlertType.ERROR);
+        }
+
+        if(GoodCreator.isChanged) initialize();
+    }
+
+    public void clickOnChangeLog(ActionEvent actionEvent) {
+        FXMLLoader loader =
+                new FXMLLoader((getClass().getResource(PATH_TO_LOG_CHANGER_WINDOW)));
+        try {
+            Parent root = loader.load();
+            openWindow("Log data changer", root, actionEvent);
+        } catch (IOException e) {
+            showMessage(FILE_NOT_FOUND_MESSAGE, Alert.AlertType.ERROR);
+        }
+    }
+
+    @FXML
+    void clickOnSignIn(MouseEvent event) {
+        FXMLLoader loader =
+                new FXMLLoader((getClass().getResource(PATH_TO_LOGIN_WINDOW)));
+        try {
+            Parent root = loader.load();
+            openWindow("Authorization", root, event);
+        } catch (IOException e) {
+            showMessage(FILE_NOT_FOUND_MESSAGE, Alert.AlertType.ERROR);
         }
         if (Login.isAdmin) initialize();
     }
@@ -117,17 +141,22 @@ public class Catalog {
             setGeneralMode();
         }
         comboType.setItems(typeList);
+        comboType.setValue(typeList.get(0));
         initCommonColumns();
+
+        suits = FXCollections.observableList(goodContainer.getSuitList());
+        footwears = FXCollections.observableList(goodContainer.getFootwearList());
+        protectionMeans = FXCollections.observableList(goodContainer.getProtectionMeanList());
+        showSuit();
     }
 
     private void initCommonColumns() {
         try {
-            goodContainer = JsonWorker.readToGoodContainer();
+            goodContainer = JsonWorker.readToGoodContainer
+                    (GoodContainer.PATH_TO_FILE_OF_GOOD_CONTAINER);
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            showMessage(FILE_NOT_FOUND_MESSAGE, Alert.AlertType.ERROR);
         }
-//        priceColumn.setCellValueFactory(cellData ->
-//                cellData.getValue().getPrice());
         priceColumn = new TableColumn<>("Price");
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 
@@ -144,9 +173,6 @@ public class Catalog {
         materialColumn.setCellValueFactory(new PropertyValueFactory<>("material"));
         goodTable.getColumns().addAll
                 (priceColumn, colorColumn, brandColumn, categoryColumn, materialColumn);
-
-        showSuit();
-
 //        for (String column : commonFields) {
 //            goodTable.getColumns().add(new TableColumn<Good, String>(column));
 //        }
@@ -158,7 +184,6 @@ public class Catalog {
         equipmentColumn = new TableColumn<>("Equipment");
         equipmentColumn.setCellValueFactory(new PropertyValueFactory<>("equipment"));
         goodTable.getColumns().add(equipmentColumn);
-        suits = FXCollections.observableList(goodContainer.getSuitList());
         goodTable.setItems(suits);
     }
 
@@ -168,7 +193,6 @@ public class Catalog {
         soleColumn = new TableColumn<>("Sole");
         soleColumn.setCellValueFactory(new PropertyValueFactory<>("sole"));
         goodTable.getColumns().add(soleColumn);
-        footwears = FXCollections.observableList(goodContainer.getFootwearList());
         goodTable.setItems(footwears);
     }
 
@@ -178,7 +202,6 @@ public class Catalog {
         nameColumn = new TableColumn<>("Name");
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         goodTable.getColumns().add(nameColumn);
-        protectionMeans = FXCollections.observableList(goodContainer.getProtectionMeanList());
         goodTable.setItems(protectionMeans);
     }
 
@@ -187,7 +210,6 @@ public class Catalog {
                 (commonFields.length, goodTable.getColumns().size());
         for (String column : columnList) {
             TableColumn tableColumn = new TableColumn(column);
-//            tableColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
             goodTable.getColumns().add(tableColumn);
         }
     }
@@ -195,6 +217,7 @@ public class Catalog {
     private void setAdminMode() {
         signInImage.setVisible(false);
         logInLabel.setVisible(false);
+        changeLogButton.setVisible(true);
         signOutImage.setVisible(true);
         logOutLabel.setVisible(true);
         addButton.setVisible(true);
@@ -204,6 +227,7 @@ public class Catalog {
     private void setGeneralMode() {
         signInImage.setVisible(true);
         logInLabel.setVisible(true);
+        changeLogButton.setVisible(false);
         signOutImage.setVisible(false);
         logOutLabel.setVisible(false);
         addButton.setVisible(false);
@@ -211,9 +235,31 @@ public class Catalog {
     }
 
     public void clickOnRemoveButton(ActionEvent actionEvent) {
-        if (!FormHelper.isSelectedItemInTable(goodTable)){
-            return;
-        }
+        if (!isSelectedItemInTable(goodTable)) {
+            showMessage(NOT_SELECTED_GOOD_MSG, Alert.AlertType.INFORMATION);
+        } else {
+            if ("Suit".equals(comboType.getValue())) {
 
+                goodContainer.getSuitList()
+                        .remove((goodTable.getSelectionModel().getSelectedItem()));
+                suits.remove(goodTable.getSelectionModel().getSelectedItem());
+                showSuit();
+            } else if ("Footwear".equals(comboType.getValue())) {
+                goodContainer.getFootwearList()
+                        .remove((goodTable.getSelectionModel().getSelectedItem()));
+                footwears.remove(goodTable.getSelectionModel().getSelectedItem());
+                showFootwear();
+            } else {
+                goodContainer.getProtectionMeanList()
+                        .remove((goodTable.getSelectionModel().getSelectedItem()));
+                protectionMeans.remove(goodTable.getSelectionModel().getSelectedItem());
+                showProtectionMean();
+            }
+            try {
+                goodContainer.saveInJson();
+            } catch (IOException e) {
+                showMessage(FILE_NOT_FOUND_MESSAGE, Alert.AlertType.ERROR);
+            }
+        }
     }
 }

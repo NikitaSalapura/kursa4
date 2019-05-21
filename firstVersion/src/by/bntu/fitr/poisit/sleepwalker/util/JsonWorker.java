@@ -12,34 +12,20 @@ import java.io.IOException;
 
 public class JsonWorker {
 
-    private final static String PATH_TO_FILE_OF_GOOD_CONTAINER
-            = "d:\\BNTU\\OOP\\kursa4\\firstVersion\\catalogItems.json";
-
-    private final static String PATH_TO_FILE_OF_LOGIN_DATA
-            = "d:\\BNTU\\OOP\\kursa4\\firstVersion\\loginData.json";
-
-    public static LoginData readToLoginData() throws FileNotFoundException {
-        JsonReader reader = new JsonReader(new FileReader(PATH_TO_FILE_OF_LOGIN_DATA));
+    public static LoginData readToLoginData(String path) throws FileNotFoundException {
+        JsonReader reader = new JsonReader(new FileReader(path));
         return new Gson().fromJson(reader, LoginData.class);
     }
 
-    public static GoodContainer readToGoodContainer() throws FileNotFoundException {
-        JsonReader reader = new JsonReader(new FileReader(PATH_TO_FILE_OF_GOOD_CONTAINER));
+    public static GoodContainer readToGoodContainer(String path) throws FileNotFoundException {
+        JsonReader reader = new JsonReader(new FileReader(path));
         return new Gson().fromJson(reader, GoodContainer.class);
     }
 
-    public static void write(GoodContainer context) throws IOException {
+    public static void write(Object object, String path) throws IOException {
         Gson gson = new Gson();
-        FileWriter writer = new FileWriter(PATH_TO_FILE_OF_GOOD_CONTAINER);
-        String string = gson.toJson(context);
-        writer.write(string);
-        writer.close();
-    }
-
-    public static void write(LoginData loginData) throws IOException {
-        Gson gson = new Gson();
-        FileWriter writer = new FileWriter(PATH_TO_FILE_OF_LOGIN_DATA);
-        String string = gson.toJson(loginData);
+        FileWriter writer = new FileWriter(path);
+        String string = gson.toJson(object);
         writer.write(string);
         writer.close();
     }

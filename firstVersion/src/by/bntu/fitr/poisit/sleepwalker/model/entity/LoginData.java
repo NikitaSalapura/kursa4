@@ -7,7 +7,8 @@ import java.io.IOException;
 
 public class LoginData {
 
-//    public final static String DEFAULT_DATA = "admin";
+    public final static String PATH_TO_FILE_OF_LOGIN_DATA
+            = "d:\\BNTU\\OOP\\kursa4\\firstVersion\\loginData.json";
 
     private static LoginData loginData;
 
@@ -21,7 +22,7 @@ public class LoginData {
 
     public static LoginData getInstance() throws FileNotFoundException {
         if (loginData == null) {
-            loginData = JsonWorker.readToLoginData();
+            loginData = JsonWorker.readToLoginData(PATH_TO_FILE_OF_LOGIN_DATA);
         }
         return loginData;
     }
@@ -32,7 +33,7 @@ public class LoginData {
 
     public void setLogin(String login) throws IOException {
         this.login = login;
-        JsonWorker.write(loginData);
+        JsonWorker.write(loginData, PATH_TO_FILE_OF_LOGIN_DATA);
     }
 
     public String getPassword() {
@@ -41,6 +42,11 @@ public class LoginData {
 
     public void setPassword(String password) throws IOException {
         this.password = password;
-        JsonWorker.write(loginData);
+        JsonWorker.write(loginData, PATH_TO_FILE_OF_LOGIN_DATA);
+    }
+
+    public void setLoginAndPassword(String login, String password) throws IOException {
+        setLogin(login);
+        setPassword(password);
     }
 }

@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="1" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="1">
+      <change beforePath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/controller/Catalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/controller/Catalog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/controller/CatalogEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/controller/GoodCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/controller/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/controller/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/controller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/model/entity/GoodContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/model/entity/GoodContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/model/entity/LoginData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/model/entity/LoginData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/util/FormHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/util/FormHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/util/JsonWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/util/JsonWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/view/fxml/catalogEditor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/view/fxml/goodCreatorWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/view/fxml/loginWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/view/fxml/loginWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/view/fxml/mainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/view/fxml/mainWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../firstVersion/src/by/bntu/fitr/poisit/sleepwalker/view/fxml/suitAdder.fxml" beforeDir="false" />
+    </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -69,38 +82,6 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1619055187">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="18" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="18" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="fxml" value="1" />
-          <entry key="java" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="3" />
-          <entry key="XML" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FavoritesManager">
     <favorites_list name="JavaFxApplication" />
   </component>
@@ -108,18 +89,18 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/view/fxml/loginWindow.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
+            <state relative-caret-position="475">
               <caret line="19" column="107" selection-start-line="19" selection-start-column="107" selection-end-line="19" selection-end-column="107" />
             </state>
           </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/controller/Catalog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
+            <state relative-caret-position="688">
               <caret line="100" column="88" selection-start-line="100" selection-start-column="88" selection-end-line="100" selection-end-column="88" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -131,13 +112,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/controller/CatalogEditor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+            <state relative-caret-position="100">
+              <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/controller/Login.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="432">
@@ -152,7 +133,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/log4j.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
+            <state relative-caret-position="100">
               <caret line="4" column="50" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="50" />
             </state>
           </provider>
@@ -161,7 +142,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/model/entity/Good.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1008">
+            <state relative-caret-position="1400">
               <caret line="71" selection-start-line="71" selection-end-line="71" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -175,7 +156,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/controller/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
+            <state relative-caret-position="300">
               <caret line="23" column="94" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="94" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -187,7 +168,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/util/JsonWorker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
+            <state relative-caret-position="300">
               <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -203,12 +184,12 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/view/fxml/mainWindow.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="882">
+            <state relative-caret-position="1225">
               <caret line="49" column="138" selection-start-line="49" selection-start-column="138" selection-end-line="49" selection-end-column="138" />
             </state>
           </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
     </leaf>
@@ -229,7 +210,7 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -275,12 +256,6 @@
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
   <component name="MavenProjectNavigator">
     <treeState>
       <expand />
@@ -303,6 +278,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -354,8 +331,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -422,7 +397,7 @@
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
+    <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -533,6 +508,7 @@
       </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="moduleWithDependencies" />
@@ -541,7 +517,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="moduleWithDependencies" />
@@ -552,11 +529,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
       <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
+      <predefined_log_file enabled="true" id="idea.log" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -595,6 +572,7 @@
       <workItem from="1558386281901" duration="1727000" />
       <workItem from="1558388024975" duration="1570000" />
       <workItem from="1558389787169" duration="525000" />
+      <workItem from="1558448712426" duration="9000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1558286325370</created>
@@ -607,7 +585,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86919000" />
+    <option name="totallyTimeSpent" value="86928000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -619,9 +597,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-9" y="-9" width="1618" height="870" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21860817" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22352941" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -700,9 +679,6 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
@@ -765,20 +741,20 @@
     <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar!/com/google/gson/stream/JsonReader.class" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/List.java" />
     <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/view/fxml/suitAdder.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/view/fxml/catalogEditor.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="190" selection-start-line="5" selection-start-column="190" selection-end-line="5" selection-end-column="190" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/model/entity/ShoppingCart.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -918,16 +894,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/view/fxml/loginWindow.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="19" column="107" selection-start-line="19" selection-start-column="107" selection-end-line="19" selection-end-column="107" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/controller/CatalogEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
+        <state relative-caret-position="100">
           <caret line="4" column="50" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/model/entity/Good.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
+        <state relative-caret-position="1400">
           <caret line="71" selection-start-line="71" selection-end-line="71" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -937,20 +928,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loginData.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/view/fxml/mainWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+    <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/controller/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="49" column="138" selection-start-line="49" selection-start-column="138" selection-end-line="49" selection-end-column="138" />
+        <state relative-caret-position="300">
+          <caret line="23" column="94" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="94" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/util/JsonWorker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
+        <state relative-caret-position="300">
           <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -958,18 +948,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/view/fxml/loginWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+    <entry file="file://$PROJECT_DIR$/loginData.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/view/fxml/mainWindow.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="19" column="107" selection-start-line="19" selection-start-column="107" selection-end-line="19" selection-end-column="107" />
+        <state relative-caret-position="1225">
+          <caret line="49" column="138" selection-start-line="49" selection-start-column="138" selection-end-line="49" selection-end-column="138" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/controller/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/controller/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="23" column="94" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="94" />
+        <state relative-caret-position="432">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -978,25 +971,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/controller/Catalog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
+        <state relative-caret-position="688">
           <caret line="100" column="88" selection-start-line="100" selection-start-column="88" selection-end-line="100" selection-end-column="88" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/controller/CatalogEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/by/bntu/fitr/poisit/sleepwalker/controller/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

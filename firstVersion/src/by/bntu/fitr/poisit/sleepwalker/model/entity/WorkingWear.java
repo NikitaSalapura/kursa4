@@ -2,13 +2,15 @@ package by.bntu.fitr.poisit.sleepwalker.model.entity;
 
 import javafx.beans.property.SimpleStringProperty;
 
+import java.util.Objects;
+
 
 public class WorkingWear extends Good {
 
-    public static final String DEFAULT_COLOR = "black";
-    public static final String DEFAULT_BRAND = "ANSELL";
-    public static final String DEFAULT_CATEGORY = "signal";
-    public static final String DEFAULT_MATERIAL = "cotton";
+    public static final String DEFAULT_COLOR = "undefined";
+    public static final String DEFAULT_BRAND = "undefined";
+    public static final String DEFAULT_CATEGORY = "undefined";
+    public static final String DEFAULT_MATERIAL = "undefined";
 
     protected SimpleStringProperty color;
     protected SimpleStringProperty brand;
@@ -99,6 +101,23 @@ public class WorkingWear extends Good {
     protected void initDefault() {
         super.initDefault();
         initFields(DEFAULT_COLOR,DEFAULT_BRAND,DEFAULT_CATEGORY,DEFAULT_MATERIAL);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        WorkingWear that = (WorkingWear) o;
+        return Objects.equals(color, that.color) &&
+                Objects.equals(brand, that.brand) &&
+                Objects.equals(category, that.category) &&
+                Objects.equals(material, that.material);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), color, brand, category, material);
     }
 
     @Override

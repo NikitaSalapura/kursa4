@@ -3,9 +3,11 @@ package by.bntu.fitr.poisit.sleepwalker.model.entity;
 import by.bntu.fitr.poisit.sleepwalker.model.exception.InvalidValueException;
 import javafx.beans.property.SimpleStringProperty;
 
+import java.util.Objects;
+
 public class Suit extends WorkingWear {
 
-    public static final String DEFAULT_EQUIPMENT = "jacket, pants";
+    public static final String DEFAULT_EQUIPMENT = "undefined";
 
     protected SimpleStringProperty equipment;
 
@@ -57,6 +59,20 @@ public class Suit extends WorkingWear {
     protected void copyFields(Suit suit){
         super.copyFields(suit);
         initFields(String.valueOf(suit.equipment));
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Suit suit = (Suit) o;
+        return Objects.equals(equipment, suit.equipment);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), equipment);
     }
 
     @Override

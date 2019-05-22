@@ -3,9 +3,11 @@ package by.bntu.fitr.poisit.sleepwalker.model.entity;
 
 import javafx.beans.property.SimpleStringProperty;
 
+import java.util.Objects;
+
 public class Footwear extends WorkingWear {
 
-    public static final String DEFAULT_SOLE = "hard";
+    public static final String DEFAULT_SOLE = "undefined";
 
     protected SimpleStringProperty sole;
 
@@ -65,9 +67,23 @@ public class Footwear extends WorkingWear {
         this.sole = new SimpleStringProperty(sole);
     }
 
-    protected void copyFields(Footwear footwear){
+    protected void copyFields(Footwear footwear) {
         super.copyFields(footwear);
         initFields(String.valueOf(footwear.sole));
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Footwear footwear = (Footwear) o;
+        return Objects.equals(sole, footwear.sole);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), sole);
     }
 
     @Override

@@ -2,8 +2,10 @@ package by.bntu.fitr.poisit.sleepwalker.model.entity;
 
 import javafx.beans.property.SimpleStringProperty;
 
+import java.util.Objects;
+
 public class ProtectionMean extends WorkingWear {
-    public static final String DEFAULT_NAME = "helmet";
+    public static final String DEFAULT_NAME = "undefined";
 
     protected SimpleStringProperty name;
 
@@ -22,13 +24,13 @@ public class ProtectionMean extends WorkingWear {
     }
 
     public ProtectionMean(String color,
-                    String brand, String category, String material, String name) {
+                          String brand, String category, String material, String name) {
         super(color, brand, category, material);
         initFields(name);
     }
 
     public ProtectionMean(double price, String color,
-                    String brand, String category, String material, String name) {
+                          String brand, String category, String material, String name) {
         super(price, color, brand, category, material);
         initFields(name);
     }
@@ -63,9 +65,23 @@ public class ProtectionMean extends WorkingWear {
     }
 
 
-    protected void copyFields(ProtectionMean protectionMean){
+    protected void copyFields(ProtectionMean protectionMean) {
         super.copyFields(protectionMean);
         initFields(String.valueOf(protectionMean.name));
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        ProtectionMean that = (ProtectionMean) o;
+        return Objects.equals(name, that.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), name);
     }
 
     @Override

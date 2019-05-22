@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class LoginData {
 
-    public final static String PATH_TO_FILE_OF_LOGIN_DATA
+    public static String PATH_TO_FILE_OF_LOGIN_DATA
             = "d:\\BNTU\\OOP\\kursa4\\firstVersion\\loginData.json";
 
     private static LoginData loginData;

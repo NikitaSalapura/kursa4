@@ -10,7 +10,7 @@ import java.util.Objects;
 
 public class GoodContainer {
 
-    public final static String PATH_TO_FILE_OF_GOOD_CONTAINER
+    public static String PATH_TO_FILE_OF_GOOD_CONTAINER
             = "d:\\BNTU\\OOP\\kursa4\\firstVersion\\catalogItems.json";
 
     private List<Suit> suitList;

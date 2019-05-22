@@ -2,21 +2,16 @@ package by.bntu.fitr.poisit.sleepwalker.model.entity;
 
 import by.bntu.fitr.poisit.sleepwalker.model.exception.InvalidValueException;
 import javafx.beans.property.SimpleDoubleProperty;
-import javafx.scene.image.Image;
 
-import javax.swing.text.Element;
-import javax.swing.text.html.ImageView;
-
+import java.util.Objects;
 
 public class Good {
 
     public static final double DEFAULT_PRICE = 1;
-//    public static final String DEFAULT_IMAGE = "D:\\BNTU\\OOP\\kursa4\\firstVersion\\src\\by\\bntu\\fitr\\poisit\\sleepwalker\\view\\images\\noPhoto.png";
 
     private static final String INVALID_PRICE_MSG = "Invalid price";
 
     protected SimpleDoubleProperty price;
-//    protected ImageView image;
 
     public Good() {
         initDefault();
@@ -26,10 +21,6 @@ public class Good {
         this.price = new SimpleDoubleProperty(checkPrice(price) ? price : DEFAULT_PRICE);
     }
 
-//    public Good(double price, ImageView image) {
-//        this.price = new SimpleDoubleProperty(checkPrice(price) ? price : DEFAULT_PRICE);
-//        this.image = image;
-//    }
 
     public Good(Good good) {
         if (checkForNonNull(good)) {
@@ -47,14 +38,6 @@ public class Good {
         checkPriceWithException(price);
         this.price.set(price);
     }
-//
-//    public ImageView getImage() {
-//        return image;
-//    }
-//
-//    public void setImage(ImageView image) {
-//        this.image = image;
-//    }
 
     private boolean checkPrice(double price) {
         return price > 0;
@@ -77,6 +60,19 @@ public class Good {
     protected void initDefault() {
         price = new SimpleDoubleProperty(DEFAULT_PRICE);
 //        image = new ImageView((Element) new Image(DEFAULT_IMAGE));
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Good good = (Good) o;
+        return Objects.equals(price, good.price);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(price);
     }
 
     @Override

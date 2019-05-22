@@ -17,7 +17,7 @@
       <TextField fx:id="colorField" layoutX="384.0" layoutY="50.0" prefHeight="0.0" prefWidth="193.0" promptText="Color" />
       <TextField fx:id="categoryField" layoutX="186.0" layoutY="121.0" prefHeight="0.0" prefWidth="193.0" promptText="Category" />
       <TextField fx:id="materialField" layoutX="384.0" layoutY="121.0" prefHeight="0.0" prefWidth="193.0" promptText="Material" />
-      <TextField fx:id="uniqField" layoutX="583.0" layoutY="121.0" prefHeight="0.0" prefWidth="193.0" />
+      <TextField fx:id="uniqueField" layoutX="583.0" layoutY="121.0" prefHeight="0.0" prefWidth="193.0" />
       <ComboBox fx:id="comboType" layoutX="8.0" layoutY="50.0" onAction="#clickOnComboType" prefHeight="39.0" prefWidth="171.0" />
    </children>
 </AnchorPane>

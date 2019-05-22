@@ -19,6 +19,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import org.apache.log4j.Logger;
 
 public class Catalog {
 
@@ -37,15 +38,22 @@ public class Catalog {
     static final String PATH_TO_GOOD_CREATOR_WINDOW
             = "/by/bntu/fitr/poisit/sleepwalker/view/fxml/goodCreatorWindow.fxml";
 
-    final static ObservableList<String> typeList = FXCollections
-            .observableArrayList("Suit", "Footwear", "Protection mean");
+    final static ObservableList<String> typeList;
 
-    final static String[] commonFields = new String[]
-            {"Price", "Color", "Brand", "Category", "Material"};
+    final static String[] commonFields;
 
-    public static boolean isAdmin = true;
-
+    public static boolean isAdmin;
     static GoodContainer goodContainer;
+    private static final Logger LOG;
+
+    static {
+        typeList = FXCollections
+                .observableArrayList("Suit", "Footwear", "Protection mean");
+        LOG = Logger.getLogger(Catalog.class);
+        commonFields = new String[]
+                {"Price", "Color", "Brand", "Category", "Material"};
+    }
+
 
     private ObservableList<Suit> suits;
     private ObservableList<Footwear> footwears;
@@ -92,6 +100,7 @@ public class Catalog {
     @FXML
     public void clickOnSignOut(MouseEvent mouseEvent) {
         isAdmin = false;
+        LOG.info("Admin logged out");
         initialize();
     }
 
@@ -104,9 +113,10 @@ public class Catalog {
             openWindow("GoodCreator", root, actionEvent);
         } catch (IOException e) {
             showMessage(FILE_NOT_FOUND_MESSAGE, Alert.AlertType.ERROR);
+            LOG.error("Not found goodCreatorWindow.fxml");
         }
 
-        if(GoodCreator.isChanged) initialize();
+        if (GoodCreator.isChanged) initialize();
     }
 
     public void clickOnChangeLog(ActionEvent actionEvent) {
@@ -117,6 +127,7 @@ public class Catalog {
             openWindow("Log data changer", root, actionEvent);
         } catch (IOException e) {
             showMessage(FILE_NOT_FOUND_MESSAGE, Alert.AlertType.ERROR);
+            LOG.error("Not found logDataChangerWindow.fxml");
         }
     }
 
@@ -129,12 +140,14 @@ public class Catalog {
             openWindow("Authorization", root, event);
         } catch (IOException e) {
             showMessage(FILE_NOT_FOUND_MESSAGE, Alert.AlertType.ERROR);
+            LOG.error("Not found loginWindow.fxml");
         }
         if (Login.isAdmin) initialize();
     }
 
     @FXML
     void initialize() {
+        LOG.trace("Main window was initialized");
         if (isAdmin) {
             setAdminMode();
         } else {
@@ -156,6 +169,7 @@ public class Catalog {
                     (GoodContainer.PATH_TO_FILE_OF_GOOD_CONTAINER);
         } catch (FileNotFoundException e) {
             showMessage(FILE_NOT_FOUND_MESSAGE, Alert.AlertType.ERROR);
+            LOG.error("Not found catalogItems.json");
         }
         priceColumn = new TableColumn<>("Price");
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
@@ -173,6 +187,7 @@ public class Catalog {
         materialColumn.setCellValueFactory(new PropertyValueFactory<>("material"));
         goodTable.getColumns().addAll
                 (priceColumn, colorColumn, brandColumn, categoryColumn, materialColumn);
+        LOG.trace("Default columns was initialized");
 //        for (String column : commonFields) {
 //            goodTable.getColumns().add(new TableColumn<Good, String>(column));
 //        }
@@ -222,6 +237,7 @@ public class Catalog {
         logOutLabel.setVisible(true);
         addButton.setVisible(true);
         removeButton.setVisible(true);
+        LOG.info("Admin mode activated");
     }
 
     private void setGeneralMode() {
@@ -232,6 +248,7 @@ public class Catalog {
         logOutLabel.setVisible(false);
         addButton.setVisible(false);
         removeButton.setVisible(false);
+        LOG.info("Admin mode deactivated");
     }
 
     public void clickOnRemoveButton(ActionEvent actionEvent) {
@@ -239,7 +256,6 @@ public class Catalog {
             showMessage(NOT_SELECTED_GOOD_MSG, Alert.AlertType.INFORMATION);
         } else {
             if ("Suit".equals(comboType.getValue())) {
-
                 goodContainer.getSuitList()
                         .remove((goodTable.getSelectionModel().getSelectedItem()));
                 suits.remove(goodTable.getSelectionModel().getSelectedItem());
@@ -257,6 +273,7 @@ public class Catalog {
             }
             try {
                 goodContainer.saveInJson();
+                LOG.info("Good was removed");
             } catch (IOException e) {
                 showMessage(FILE_NOT_FOUND_MESSAGE, Alert.AlertType.ERROR);
             }
